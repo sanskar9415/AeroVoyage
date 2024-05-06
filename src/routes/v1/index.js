@@ -4,4 +4,6 @@ const CityController = require('../../controllers/city-controller');
 const router = express.Router();
 
 router.post('/city' , CityController.create);
-module.exports = router;
+router.delete('/city/:id', CityController.destroy);
+
+module.exports = router;    
