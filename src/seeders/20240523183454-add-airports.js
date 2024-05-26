@@ -16,19 +16,19 @@ module.exports = {
     await queryInterface.bulkInsert('Airports', [
       {
         name: 'Kempegowda International Airport',
-        cityId: 7,
+        cityId: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         name: 'Mysuru Airport',
-        cityId: 7,
+        cityId: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         name: 'Mengaluru International Airport',
-        cityId: 7,
+        cityId: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
