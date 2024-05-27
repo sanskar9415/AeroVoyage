@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const ApiRoutes = require('./routes/index.js');
 
 
-const {sequelize , Airport, City} = require('./models/index.js');
+// const {sequelize , Airport, City , Airplane} = require('./models/index.js');
 
 const SetUpAndStartServer = async () => {
 
@@ -20,6 +20,14 @@ const SetUpAndStartServer = async () => {
     app.listen(PORT , async () => {
         console.log(`server started at ${PORT}`);
 
+        if(process.env.SYNC_DB){
+            sequelize.sync({alter:true});
+        }
+
+        // await Airplane.create({
+        //     modelNumber: 'Bombardier CRJ'
+        // })
+
     
 
 
@@ -31,17 +39,22 @@ const SetUpAndStartServer = async () => {
     //     });
     //     const airports = await city.getAirports();
     //     console.log(city);
-    const city = await City.findOne({
-    where: {
-        id: 2
-    }
-});
+//     const city = await City.findOne({
+//     where: {
+//         id: 2
+//     }
+// });
 
 
     // Assuming the association is defined correctly and getAirports() is available
-    const airports = await city.getAirports();
-    console.log('City:', city.name);
-    console.log('Associated Airports:', airports);
+    // const airports = await city.getAirports();
+    // console.log('City:', city.name);
+    // console.log('Associated Airports:', airports);
+
+    // const airport = await city.addAirport({
+    //     name: 'jindal vijayanagar airport'
+    // })
+    // console.log(airport);
 
     // const airports = await city.getAirports();
     
