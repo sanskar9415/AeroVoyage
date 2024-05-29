@@ -40,7 +40,7 @@ module.exports = FlightService;
  *   arrivalAirportId,
  *   arrivalTime,
  *   departureTime,
- *   price
+ *   price,
  *   totalSeats -> airplane
  * }
  */
