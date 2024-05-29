@@ -10,7 +10,7 @@ const create = async (req,res) => {
             data: flight,
             success: true,
             err: {},
-            message: "successfully reated a flight"
+            message: "successfully created a flight"
         })
         
     } catch (error) {
