@@ -17,17 +17,17 @@ const PrepareAndStartServer = () => {
 
     app.listen(PORT , async ()=>{
         console.log(`server started at port : ${PORT}`);
-
-        const u1 = await User.findByPk(10);
-        const r1 = await Role.findByPk(2);
+        
+        if(process.env.DB_SYNC){
+            db.sequelize.sync({alter: true});
+        }
+        // const u1 = await User.findByPk(10);
+        // const r1 = await Role.findByPk(2);
 
         // u1.addRole(r1);
-        const response = await u1.hasRole(r1);
-        console.log(response);
+        // const response = await u1.hasRole(r1);
+        // console.log(response);
 
-        // if(process.env.DB_SYNC){
-        //     db.sequelize.sync({alter: true});
-        // }
 
         // const service = new UserService();
         // const newToken = service.createToken({ email: 'sanskar@gmail.com', id: 1 })
