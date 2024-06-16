@@ -71,6 +71,9 @@ class UserService {
             const response = jwt.verify(token , JWT_KEY);
             return response;
         } catch (error) {
+            if(error.name == "SequelizeValidationError"){
+                throw error;
+            }
             console.log('something went wrong in token validation');
             throw error;
         }
